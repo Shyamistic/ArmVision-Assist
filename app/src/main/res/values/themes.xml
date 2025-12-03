@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- App theme using MaterialComponents -->
+    <style name="Theme.ArmVisionAssist" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- You can add custom colors later if you want -->
+    </style>
+
+</resources>
+

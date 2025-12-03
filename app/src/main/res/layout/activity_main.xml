@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scaleType="fillCenter" />
+
+    <com.example.armvisionassist.GraphicOverlay
+        android:id="@+id/graphicOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.armvisionassist.OverlayView
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#99000000"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="ARM VISION // PRO"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:letterSpacing="0.15"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/switchAutoRead"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchAutoRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:text="HUD MODE"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:thumbTint="#00E676"
+        app:trackTint="#90A4AE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/bottomSheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchAutoRead">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFlashlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:src="@android:drawable/ic_menu_camera"
+            app:backgroundTint="#263238"
+            app:tint="#00E5FF"
+            app:fabSize="mini"
+            app:borderWidth="0dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderZoom"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:rotation="270"
+            android:valueFrom="1.0"
+            android:valueTo="5.0"
+            android:stepSize="0.1"
+            app:trackColorInactive="#33FFFFFF"
+            app:trackColorActive="#2979FF"
+            app:thumbColor="#2979FF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#DD1E1E24"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SYSTEM READY | WAITING FOR TARGET"
+            android:textColor="#00E5FF"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:letterSpacing="0.05"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupActions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true" />
+        </HorizontalScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:id="@+id/textRecognized"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Align text inside the HUD brackets..."
+                android:textColor="#ECEFF1"
+                android:textSize="16sp"
+                android:lineSpacingExtra="5dp"
+                android:fontFamily="sans-serif-medium"/>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCapture"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="ENGAGE VISION"
+            android:textSize="16sp"
+            android:letterSpacing="0.15"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            app:backgroundTint="#2962FF"
+            android:stateListAnimator="@null"
+            app:elevation="4dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
