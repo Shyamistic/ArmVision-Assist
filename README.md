@@ -168,7 +168,7 @@ ArmVisionAssist/
 
 ▶️ Setup Instructions
 1. Clone repository
-git clone https://github.com/<Shyamistic>/ArmVisionAssist
+git clone https://github.com/Shyamistic/ArmVision-Assist
 cd ArmVisionAssist
 
 2. Import into Android Studio
