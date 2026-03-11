@@ -216,7 +216,3 @@ The codebase is easy to extend, modify, and embed.
 
 MIT License.
 
-🎯 Submission for Arm AI Developer Challenge 2025
-
-Built for the Arm AI Developer Challenge 2025.
-Meets all requirements: on-device ML, ARM optimization, source code, architecture, and user impact.
